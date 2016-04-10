@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title Chat
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        script(src="socket.io/socket.io.js")
+        script(src="scripts/es6-shim/es6-shim.min.js")
+        script(src="scripts/systemjs/dist/system-polyfills.js")
+        script(src="scripts/angular2/bundles/angular2-polyfills.js")
+        script(src="scripts/systemjs/dist/system.js")
+        script(src="scripts/rxjs/bundles/Rx.js")
+        script(src="scripts/angular2/bundles/angular2.dev.js")
+        script(src="scripts/jquery/dist/jquery.js")
+        script.
+            System.config({
+              packages: {
+                app: {
+                  format: 'register',
+                  defaultExtension: 'js'
+                }
+              }
+            });
+            System.import('js/app/main.js')
+              .then(null, console.error.bind(console));
+    body
+        chat-app
+            |Loading...
+                
