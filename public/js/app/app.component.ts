@@ -14,7 +14,7 @@ export class AppComponent {
     constructor(){
         this.socket = io();
         this.socket.on('messageUpdate', function(data){
-            this.message += data + "\n";
+            this.message = data;
         }.bind(this));
     }
 
